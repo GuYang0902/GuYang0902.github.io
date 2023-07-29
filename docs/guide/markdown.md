@@ -76,7 +76,7 @@ export default defineConfig({
 
 ```md
 <!-- 相对路径，目标文件相对于本文章所在位置 -->
-![LOGO](./public/logo.png)
+![LOGO](../public/logo.png)
 
 <!-- 绝对路径，目标文件就是真实路径在哪 -->
 ![LOGO](/docs/public/logo.png)
@@ -86,9 +86,9 @@ export default defineConfig({
 
 输出：
 
-![LOGO](./public/logo.png)
+![LOGO](../public/logo.png)
 
-![LOGO](/public/logo.png)
+![LOGO](../public/logo.png)
 
 
 

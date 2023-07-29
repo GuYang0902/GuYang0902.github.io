@@ -30,7 +30,7 @@ export default defineConfig({
 })
 ```
 
-另一个要注意的点，你的 [Fav图标路径](./page.md#fav图标) 也要变动一下
+<!-- 另一个要注意的点，你的 [Fav图标路径](./page.md#fav图标) 也要变动一下 -->
 
 ```ts{3-6}
 export default defineConfig({
