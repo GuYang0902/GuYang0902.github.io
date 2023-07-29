@@ -5,7 +5,7 @@ layout: home
 hero:
   name: "GUYa"
   text: "A Blog Site"
-  tagline: My great project tagline
+  tagline: My great project tag
   image:
     # src: /logo.png
     # alt: VitePress
