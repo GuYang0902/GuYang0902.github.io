@@ -5,6 +5,7 @@ export default defineConfig({
   title: "顾",
   description: "A Blog Site",
   outDir: "../dist",
+  base: '/dist/', // base url
   lastUpdated: true,
   head: [["meta", { name: "keywords", content: "HTML, CSS, JavaScript" }]],
   //启用深色模式
