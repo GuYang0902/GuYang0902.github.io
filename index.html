@@ -1,7 +1,268 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"/><link rel="icon" type="image/svg+xml" href="/vue.svg"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>常用工具集</title><script type="module" crossorigin src="/assets/js/index-c22bfbf9.js"></script><link rel="stylesheet" href="/assets/css/index-8374a580.css"><link rel="manifest" href="/manifest.webmanifest"><script id="vite-plugin-pwa:register-sw" src="/registerSW.js"></script></head><body><div id="app"><style>#app,body,html{width:100%;height:100%;padding:0;margin:0}.loading-box{display:flex;flex-direction:column;align-items:center;justify-content:center;width:100%;height:100%}.loading-box .loading-wrap{display:flex;align-items:center;justify-content:center;padding:98px}.dot{position:relative;box-sizing:border-box;display:inline-block;width:32px;height:32px;font-size:32px;transform:rotate(45deg);animation:ant-rotate 1.2s infinite linear}.dot i{position:absolute;display:block;width:14px;height:14px;background-color:#409eff;border-radius:100%;opacity:.3;transform:scale(.75);transform-origin:50% 50%;animation:ant-spin-move 1s infinite linear alternate}.dot i:first-child{top:0;left:0}.dot i:nth-child(2){top:0;right:0;animation-delay:.4s}.dot i:nth-child(3){right:0;bottom:0;animation-delay:.8s}.dot i:nth-child(4){bottom:0;left:0;animation-delay:1.2s}@keyframes ant-rotate{to{transform:rotate(405deg)}}@keyframes ant-spin-move{to{opacity:1}}</style><div class="loading-box"><div class="loading-wrap"><span class="dot dot-spin"><i></i><i></i><i></i><i></i></span></div></div></div><script>const globalState = JSON.parse(window.localStorage.getItem("geeker-global"));
-      if (globalState) {
-        const dot = document.querySelectorAll(".dot i");
-        const html = document.querySelector("html");
-        dot.forEach(item => (item.style.background = globalState.primary));
-        if (globalState.isDark) html.style.background = "#141414";
-      }</script></body></html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Minimalist Nav</title>
+    <style>
+      /* 1. 全局样式：极简背景和字体 */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        background-color: #f8f8f8; /* 浅灰色背景 */
+        color: #333;
+        margin: 0;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      /* 2. 主容器：限制宽度，居中 */
+      .container {
+        width: 100%;
+        max-width: 900px;
+        margin-top: 50px;
+      }
+
+      /* 3. 标题 */
+      h1 {
+        text-align: center;
+        font-weight: 300;
+        color: #1a1a1a;
+        margin-bottom: 40px;
+        letter-spacing: 2px;
+      }
+
+      /* 简历跳转链接样式 */
+      .resume-link-box {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+
+      .resume-link {
+        text-decoration: none;
+        color: #cc0000;
+        font-weight: bold;
+        padding: 10px 20px;
+        border: 1px solid #cc0000;
+        border-radius: 5px;
+        transition: all 0.2s;
+      }
+
+      .resume-link:hover {
+        background-color: #ffebeb;
+      }
+
+      /* 4. 分类区段 */
+      .category {
+        margin-bottom: 5px;
+        padding: 20px 0;
+      }
+
+      .category h2 {
+        font-size: 1.4em;
+        color: #555;
+        border-bottom: 2px solid #ccc;
+        padding-bottom: 8px;
+        margin-bottom: 20px;
+      }
+
+      /* 5. 链接列表：Flexbox 布局，保持一行多个链接 */
+      .link-list {
+        display: flex;
+        flex-wrap: wrap; /* 允许换行 */
+        gap: 15px 30px; /* 行间距和列间距 */
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .link-list li {
+        margin: 0;
+      }
+
+      /* 6. 链接样式：极简，无装饰 */
+      .link-list a {
+        text-decoration: none; /* 去除下划线 */
+        color: #007bff; /* 链接颜色 */
+        font-size: 1.1em;
+        transition: color 0.2s;
+      }
+
+      .link-list a:hover {
+        color: #0056b3; /* 悬停颜色 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Minimalist Nav</h1>
+
+      <div class="resume-link-box">
+        <a href="resume.html" class="resume-link"> 💡 关于我 (Résumé) </a>
+      </div>
+      <div class="category">
+        <h2>🤖 AI</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://yiyan.baidu.com" target="_blank">文心一言</a>
+          </li>
+          <li>
+            <a href="https://tongyi.aliyun.com/qianwen" target="_blank"
+              >通义千问</a
+            >
+          </li>
+          <li>
+            <a href="https://www.doubao.com" target="_blank">豆包</a>
+          </li>
+          <li>
+            <a href="https://xinghuo.xfyun.cn" target="_blank"
+              >星火大模型</a
+            >
+          </li>
+          <li>
+            <a href="https://kimi.moonshot.cn" target="_blank">Kimi</a>
+          </li>
+          <li><a href="https://chatglm.cn" target="_blank">智谱清言</a></li>
+          <li>
+            <a href="https://yuanbao.tencent.com" target="_blank">元宝</a>
+          </li>
+          <li>
+            <a href="https://hunyuan.tencent.com" target="_blank"
+              >混元大模型</a
+            >
+          </li>
+          <li>
+            <a href="https://www.deepseek.com" target="_blank"
+              >DeepSeek</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="category">
+        <h2></h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://chatgpt.com" target="_blank">ChatGPT</a>
+          </li>
+          <li>
+            <a href="https://copilot.microsoft.com" target="_blank"
+              >Copilot</a
+            >
+          </li>
+          <li>
+            <a href="https://gemini.google.com" target="_blank"
+              >Gemini</a
+            >
+          </li>
+          <li>
+            <a href="https://claude.ai" target="_blank">Claude</a>
+          </li>
+          <li>
+            <a href="https://www.perplexity.ai" target="_blank"
+              >Perplexity AI</a
+            >
+          </li>
+          <li><a href="https://poe.com" target="_blank">Quora Poe</a></li>
+          <li>
+            <a href="https://www.llama.com" target="_blank">Llama</a>
+          </li>
+          <li><a href="https://mistral.ai" target="_blank">Mistral AI</a></li>
+          <li><a href="https://grok.x.ai" target="_blank">Grok</a></li>
+        </ul>
+      </div>
+      <div class="category">
+        <h2>💻 开发与技术</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.google.com" target="_blank">Google 搜索</a>
+          </li>
+          <li><a href="https://github.com" target="_blank">GitHub</a></li>
+          <li>
+            <a href="https://stackoverflow.com" target="_blank"
+              >Stack Overflow</a
+            >
+          </li>
+          <li>
+            <a href="https://developer.mozilla.org" target="_blank"
+              >MDN Web Docs</a
+            >
+          </li>
+          <li><a href="https://www.v2ex.com" target="_blank">V2EX 社区</a></li>
+          <li><a href="https://gitee.com" target="_blank">Gitee</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>📰 信息与资讯</h2>
+        <ul class="link-list">
+          <li><a href="https://www.reuters.com" target="_blank">Reuters</a></li>
+          <li>
+            <a href="https://techcrunch.com" target="_blank">TechCrunch</a>
+          </li>
+          <li><a href="https://36kr.com" target="_blank">36氪</a></li>
+          <li>
+            <a href="https://www.economist.com" target="_blank"
+              >The Economist</a
+            >
+          </li>
+          <li>
+            <a href="https://www.readability.com" target="_blank"
+              >聚合阅读 (示例)</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>🛠️ 效率与工具</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.deepl.com" target="_blank">DeepL 翻译</a>
+          </li>
+          <li><a href="https://www.notion.so" target="_blank">Notion</a></li>
+          <li><a href="https://todoist.com" target="_blank">Todoist</a></li>
+          <li>
+            <a href="https://www.1password.com" target="_blank">1Password</a>
+          </li>
+          <li>
+            <a href="https://www.ilovepdf.com" target="_blank">PDF 工具</a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>🖼️ 设计与创意</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://unsplash.com" target="_blank">Unsplash 图库</a>
+          </li>
+          <li><a href="https://coolors.co" target="_blank">Coolors 配色</a></li>
+          <li><a href="https://www.figma.com" target="_blank">Figma</a></li>
+          <li>
+            <a href="https://dribbble.com" target="_blank">Dribbble 灵感</a>
+          </li>
+          <li>
+            <a href="https://fontawesome.com" target="_blank"
+              >Font Awesome 图标</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2>🎉 其他</h2>
+        <ul class="link-list">
+          <li>
+            <a href="https://www.bilibili.com" target="_blank">哔哩哔哩</a>
+          </li>
+          <li><a href="https://www.netflix.com" target="_blank">Netflix</a></li>
+          <li><a href="https://www.spotify.com" target="_blank">Spotify</a></li>
+          <li><a href="https://www.reddit.com" target="_blank">Reddit</a></li>
+          <li><a href="https://www.twitch.tv" target="_blank">Twitch</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>
